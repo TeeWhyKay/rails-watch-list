@@ -1,5 +1,4 @@
-<p>Find me in app/views/lists/show.html.erb</p>
-<h2><%= @list.name %></h2>
+<%= render 'categorybanner', list: @list %>
 <br>
 <% @bookmarks.each_with_index do |bookmark, index| %>
   <p><%= "#{index+1}: #{bookmark.movie.title} - #{bookmark.comment}" %></p>
@@ -8,12 +7,21 @@
               data: { confirm: "Are you sure?" } %>
 <% end %>
 
+<% @movies.each do |movie| %>
+  <div class="container">
+    <div class="row">
+      <%= render 'card', movie: movie %>
+    </div>
+  </div>
+<% end %>
+
+
 <h3>Submit a comment</h3>
 <%= simple_form_for @bookmark do |f| %>
   <%= f.input :comment %>
   <%= f.association :movie %>
   <%= f.association :list %>
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "btn btn-secondary" %>
 <% end %>
 
-<%= link_to 'Back to lists', lists_path%>
+<%= link_to 'Back to lists', lists_path, class: "btn btn-primary"%>

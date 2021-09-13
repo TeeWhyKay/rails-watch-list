@@ -7,7 +7,7 @@ class BookmarksController < ApplicationController
     if @bookmark.save
       redirect_to list_path(@bookmark.list)
     else
-      render 'lists/index'
+      render template: "lists/show"
     end
   end
 
