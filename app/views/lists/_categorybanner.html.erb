@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/evlkOfkQ5rE/1600x900);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path list.photo.key, height: 900, width: 1440, crop: :fill %>);">
   <div class="container text-center">
     <h2><%= list.name %> movies</h2>
   </div>

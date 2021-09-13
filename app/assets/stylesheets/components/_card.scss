@@ -5,9 +5,9 @@
 }
 
 .card-trip > img {
-  height: 200px;
+  height: 500px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .card-trip h2 {
